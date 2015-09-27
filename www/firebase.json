@@ -1,0 +1,9 @@
+{
+  "firebase": "recurring2do",
+  "public": ".",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
