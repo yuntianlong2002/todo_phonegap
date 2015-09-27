@@ -37,10 +37,9 @@
       <div class="container" ng-controller="TodoListController">
         <section class="todo">
           <ul class="todo-controls">
-                <span>{{remaining()}}/{{todos.length}} {{iflogin()}}</span>
-                <li class="right"><a ng-click="archive()" class="icon-delete">Delete</a></li>
-                <li class="right"><a></a></li>
-                <li class="right"><a ng-click="login()" class="icon-add">Add</a></li>
+                <span class="right">{{iflogin()}}</span>
+                <li><a ng-click="archive()" class="icon-delete">Delete</a></li>
+                <li><a ng-click="login()"><img src="img/facebook.png" width="12px" height="12px" style="display: inline-block;vertical-align: 3px;"/></a></li>
           </ul>
 
           <ul class="todo-list">
