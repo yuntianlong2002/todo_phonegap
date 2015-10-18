@@ -2,9 +2,21 @@ angular.module('todoApp', ["firebase"])
   .controller('TodoListController', function TodoListController($scope, $rootScope, $firebaseArray) {
 
     var url = 'https://recurring2do.firebaseio.com';
+    var fireRef = new Firebase(url);
+
     // For progress bar.
     var widths = ["5%", "25%", "50%", "75%", "100%"];
     var colors = ["#f63a0f", "#f27011", "#f2b01e", "#f2d31b", "#86e01e"];
+
+    fireRef.onAuth(function(authData) {
+      if (authData) {
+        console.log("User " + authData.uid + " is logged in with " + authData.provider);
+        updateRootScope(authData.google.displayName, authData.google.id);
+        updateData($rootScope.userid);
+      } else {
+        console.log("User is logged out");
+      }
+    });
 
     if (typeof $rootScope.userid != 'undefined') {
       updateData($rootScope.userid);
@@ -40,11 +52,16 @@ angular.module('todoApp', ["firebase"])
     // Assign the temp user (browser spcific).
     function assignTempUser() {
       //Replace with local user id
-      new Fingerprint2().get(function(result){
+      new Fingerprint2().get(function(result) {
         console.log(result);
         $rootScope.tempuser = result;
         updateData($rootScope.tempuser);
       });
+    }
+
+    function updateRootScope(display_name, id) {
+      $rootScope.display_name = display_name;
+      $rootScope.userid = id;
     }
 
     // Helper function for login.
@@ -56,11 +73,9 @@ angular.module('todoApp', ["firebase"])
             console.log("Login Failed!", error);
           } else {
             if (service_name == "google") {
-              $rootScope.display_name = authData.google.displayName;
-              $rootScope.userid = authData.google.id;
+              updateRootScope(authData.google.displayName, authData.google.id);
             } else if (service_name == "facebook") {
-              $rootScope.display_name = authData.facebook.displayName;
-              $rootScope.userid = authData.facebook.id;
+              updateRootScope(authData.facebook.displayName, authData.facebook.id);
             }
             updateData($rootScope.userid);
           }
