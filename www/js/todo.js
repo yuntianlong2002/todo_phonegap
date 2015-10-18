@@ -31,25 +31,31 @@ angular.module('todoApp', ["firebase"])
     };
 
     $scope.login = function() {
-      fireRef.authWithOAuthPopup("facebook", function(error, authData) {
-        if (error) {
-          console.log("Login Failed!", error);
-        } else {
-          console.log("new version!");
-          console.log(authData.facebook.id);
-          console.log(authData.facebook.displayName);
-          $rootScope.display_name = authData.facebook.displayName;
-          $rootScope.userid = authData.facebook.id;
-          url = 'https://recurring2do.firebaseio.com/' + $rootScope.userid;
-          console.log(url);
-          fireRef = new Firebase(url);
-          // Bind the todos to the firebase provider.
-          $scope.todos = $firebaseArray(fireRef);
-
-        }
-      }, {
-        scope: "email" // the permissions requested
-      });
+      if(!$rootScope.display_name) {
+        fireRef.authWithOAuthPopup("facebook", function(error, authData) {
+          if (error) {
+            console.log("Login Failed!", error);
+          } else {
+            console.log(authData.facebook.id);
+            console.log(authData.facebook.displayName);
+            $rootScope.display_name = authData.facebook.displayName;
+            $rootScope.userid = authData.facebook.id;
+            url = 'https://recurring2do.firebaseio.com/' + $rootScope.userid;
+            console.log(url);
+            fireRef = new Firebase(url);
+            // Bind the todos to the firebase provider.
+            $scope.todos = $firebaseArray(fireRef);
+          }
+        }, {
+          scope: "email" // the permissions requested
+        });
+      } else {
+        $rootScope.display_name = "";
+        url = 'https://recurring2do.firebaseio.com';
+        fireRef.unauth();
+        fireRef = new Firebase(url);
+        $scope.todos = $firebaseArray(fireRef);
+      }
     }
 
     $scope.iflogin = function() {

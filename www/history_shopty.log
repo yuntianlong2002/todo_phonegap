@@ -1,0 +1,1000 @@
+  805  cd startbootstrap-freelancer-1.0.3/
+  806  mv * ../ -r
+  807  mv * ../ 
+  808  ls
+  809  cd ..
+  810  ls
+  811  rm startbootstrap-freelancer-1.0.3/
+  812  rm startbootstrap-freelancer-1.0.3/ -r
+  813  ls
+  814  git add .
+  815  git commit -m "init"
+  816  git push origin master
+  817  ls
+  818  cd mail/
+  819  emacs contact_me.php
+  820  ls
+  821  cd ..
+  822  ls
+  823  emacs index.html 
+  824  history
+  825  emacs /etc/apache2/sites-available/000-default.conf
+  826  emacs /etc/apache2/apache2.conf
+  827  sudo service apache2 restart
+  828  emacs index.html 
+  829  git diff index.html
+  830  ls
+  831  cd mail/
+  832  ls
+  833  git diff contact_me.php
+  834  emacs contact_me.php 
+  835  cd ..
+  836  emacs index.html 
+  837  apt-get install msmtp
+  838  emacs ~/.msmtprc
+  839  chmod 600 ~/.msmtprc
+  840  echo -e "From: Alice <alice@example.com> \n\
+  841  To: Bob <bob@domain.com> \n\
+  842  Subject: Hello World \n\
+  843  \n\
+  844  This email was sent using MSMTP via Gmail/Yahoo." >> sample_email.txt
+  845  ls
+  846  cat sample_email.txt | msmtp --debug -a sendgrid yuntianlong2002@gmail.com
+  847  emacs ~/.msmtprc
+  848  cat sample_email.txt | msmtp --debug -a sendgrid yuntianlong2002@gmail.com
+  849  cp -p ~/.msmtprc /etc/.msmtp_php
+  850  chown www-data:www-data /etc/.msmtp_php
+  851  emacs /etc/php5/php.ini
+  852  cd /etc/
+  853  cd php5/
+  854  ls
+  855  emacs /etc/php5/php.ini
+  856  touch /var/log/msmtp.log
+  857  chown www-data:www-data /var/log/msmtp.log
+  858  service httpd restart
+  859  service httpd start
+  860  apt-get install httpd
+  861  sudo apt-get install apache2
+  862  service php5-fpm restart
+  863  history| grep restart
+  864  sudo service apache2 restart
+  865  tail /var/log/msmtp.log
+  866  cd /var/www/
+  867  ls
+  868  cd html/
+  869  ls
+  870  cd startbootstrap-freelancer/
+  871  ls
+  872  cd mail/
+  873  ls
+  874  cp contact_me.php backup.php
+  875  git checkout contact_me.php
+  876  git diff contact_me.php
+  877  cd ..
+  878  ls
+  879  cp index.html backup.html
+  880  git checkout index.html
+  881  tail /var/log/msmtp.log
+  882  cd mail/
+  883  ls
+  884  emacs contact_me.php 
+  885  cd ..
+  886  ls
+  887  eamcs index.html 
+  888  emacs index.html 
+  889  cp backup.html index.html 
+  890  emacs index.html 
+  891  cd ..
+  892  ls
+  893  cd startbootstrap-freelancer/
+  894  ls
+  895  cd mail/
+  896  ls
+  897  emacs contact_me.php 
+  898  apt-get install sendmail
+  899  sendmailconfig
+  900  history
+  901  ls
+  902  cd /var/www/
+  903  ls
+  904  cd html/
+  905  ls
+  906  cd startbootstrap-freelancer/
+  907  ls
+  908  emacs index.html 
+  909  ls
+  910  cd /var/www/
+  911  ls
+  912  cd html/
+  913  ls
+  914  cd startbootstrap-freelancer/
+  915  ls
+  916  emacs index.html 
+  917  cd /var/www/html/
+  918  ls
+  919  cd startbootstrap-freelancer/
+  920  emacs h
+  921  ls
+  922  emacs index.html 
+  923  cd css/
+  924  ls
+  925  emacs freelancer.css 
+  926  ls
+  927  cd ..
+  928  ls
+  929  cd less/
+  930  ls
+  931  emacs freelancer.less 
+  932  cd ..
+  933  ls
+  934  cd css/
+  935  ls
+  936  emacs freelancer.css 
+  937  cd ..
+  938  ls
+  939  emacs index.html 
+  940  cd css/
+  941  ls
+  942  emacs freelancer.css 
+  943  ls
+  944  cd ..
+  945  ls
+  946  emacs index.html 
+  947  cd css/
+  948  ls
+  949  emacs freelancer.css 
+  950  cd ..
+  951  emacs freelancer.css 
+  952  emacs index.html 
+  953  cd css/
+  954  emacs freelancer.css 
+  955  cd ..
+  956  grep "btn-success" -r .
+  957  ls
+  958  cd css/
+  959  grep "btn-success" -r .
+  960  emacs freelancer.css 
+  961  emacs bootstrap.min.css 
+  962  git status
+  963  git checkout freelancer.css
+  964  ls
+  965  cd ..
+  966  ls
+  967  emacs index.html 
+  968  ls
+  969  cd /var/
+  970  cd www/
+  971  ;s
+  972  ls
+  973  cd html/
+  974  ls
+  975  emacs index.html 
+  976  cd startbootstrap-freelancer/
+  977  ;s
+  978  ls
+  979  mail
+  980  emacs index.html 
+  981  ls
+  982  cd css/
+  983  ls
+  984  emacs freelancer.css 
+  985  cd ..
+  986  ls
+  987  eamcs index.html 
+  988  emacs index.html 
+  989  cd css/
+  990  ls
+  991  emacs freelancer.css 
+  992  cd ..
+  993  emacs index.html 
+  994  cd css/
+  995  ls
+  996  emacs freelancer.css 
+  997  emacs /var/www/html/startbootstrap-freelancer/
+  998  emacs /var/www/html/startbootstrap-freelancer/index.html 
+  999  ls
+ 1000  cd /var/www/html/
+ 1001  ls
+ 1002  cd startbootstrap-freelancer/
+ 1003  git status
+ 1004  git diff css/freelancer.css
+ 1005  emacs css/freelancer.css
+ 1006  git status
+ 1007  git add .
+ 1008  git commit -m "first landing page"
+ 1009  git push origin master
+ 1010  ls
+ 1011  cd /var/www/
+ 1012  ls
+ 1013  cd html/
+ 1014  ls
+ 1015  cd startbootstrap-freelancer/
+ 1016  ls
+ 1017  git clone https://github.com/humhub/humhub.git
+ 1018  cd humhub/
+ 1019  ls
+ 1020  history | grep "/assets"
+ 1021  chgrp www-data /assets
+ 1022  history
+ 1023  clear
+ 1024  www-data /assets
+ 1025  chgrp www-data /assets
+ 1026  ls
+ 1027  chgrp www-data assets
+ 1028  history
+ 1029  history | grep chgrp
+ 1030  chgrp www-data uploads/
+ 1031  history | grep chmod
+ 1032  chmod g+w uploads/
+ 1033  mysql
+ 1034  history | grep sql
+ 1035  mysql -u root -p
+ 1036  ls
+ 1037  cd protected/
+ 1038  ls
+ 1039  cd modules
+ 1040  ls
+ 1041  cd calendar/
+ 1042  ls
+ 1043  cd views/
+ 1044  ls
+ 1045  cd entry/
+ 1046  ls
+ 1047  emacs view.php 
+ 1048  cd ..
+ 1049  ls
+ 1050  cd ..
+ 1051  ls
+ 1052  cd ..
+ 1053  ls
+ 1054  cd ..
+ 1055  ls
+ 1056  cd ..
+ 1057  grep "</title>" -r .
+ 1058  ls
+ 1059  cd protected/
+ 1060  ls
+ 1061  cd modules
+ 1062  ls
+ 1063  cd calendar/
+ 1064  ls
+ 1065  cd controllers/
+ 1066  ls
+ 1067  emacs ViewController.php 
+ 1068  emacs EntryController.php 
+ 1069  emacs GlobalController.php 
+ 1070  emacs ViewController.php 
+ 1071  emacs EntryController.php 
+ 1072  ls
+ 1073  cd /var/
+ 1074  cd www/
+ 1075  ls
+ 1076  cd html/
+ 1077  ls
+ 1078  git clone https://github.com/dodgepudding/wechat-php-sdk.git
+ 1079  ls
+ 1080  cd wechat-php-sdk/
+ 1081  ls
+ 1082  cd test/
+ 1083  ls
+ 1084  cd jsapi/
+ 1085  ls
+ 1086  cd ..
+ 1087  ls
+ 1088  cd ..
+ 1089  ls
+ 1090  cd ...
+ 1091  cd ..
+ 1092  ls
+ 1093  mv wechat-php-sdk/ -r startbootstrap-freelancer/
+ 1094  mv wechat-php-sdk/  startbootstrap-freelancer/
+ 1095  ls
+ 1096  cd startbootstrap-freelancer/
+ 1097  ls
+ 1098  rm -r wechat-php-sdk/
+ 1099  git clone https://github.com/netputer/wechat-php-sdk.git
+ 1100  ls
+ 1101  cd wechat-php-sdk/
+ 1102  ls
+ 1103  cd example/
+ 1104  ls
+ 1105  pwd
+ 1106  ls
+ 1107  emacs server.php 
+ 1108  ls
+ 1109  cd /var/www/
+ 1110  ls
+ 1111  cd html/
+ 1112  ls
+ 1113  cd startbootstrap-freelancer/
+ 1114  ls
+ 1115  cd wechat-php-sdk/
+ 1116  ls
+ 1117  cd example/
+ 1118  ls
+ 1119  emacs server.php 
+ 1120  cd ..
+ 1121  ls
+ 1122  mv wechat-php-sdk/ wechat-php-sdk-simple/
+ 1123  git clone https://github.com/dodgepudding/wechat-php-sdk.git
+ 1124  ls
+ 1125  cd wechat-php-sdk
+ 1126  ls
+ 1127  emacs demo.php 
+ 1128  ls
+ 1129  emacs composer.json 
+ 1130  emacs wechat.class.php 
+ 1131  emacs demo.php
+ 1132  emacs sdkdemo.php
+ 1133  emacs jsapi-demo-api-6.1.js
+ 1134  emacs style.css
+ 1135  emacs demo.php 
+ 1136  ls
+ 1137  cd /var/www/html/startbootstrap-freelancer/wechat-php-sdk
+ 1138  ls
+ 1139  emacs demo.php 
+ 1140  emacs sdkdemo.php 
+ 1141  history| grep restart
+ 1142  sudo service apache2 restart
+ 1143  emacs sdkdemo.php 
+ 1144  sudo service apache2 restart
+ 1145  emacs demo.php 
+ 1146  cd test/
+ 1147  ls
+ 1148  emacs qydemo.php 
+ 1149  cd ..
+ 1150  ls
+ 1151  cd ..
+ 1152  ls
+ 1153  cd wechat-php-sdk-simple/
+ 1154  ls
+ 1155  cd example/
+ 1156  ls
+ 1157  emacs server.php 
+ 1158  cp server.php ../../wechat-php-sdk/
+ 1159  cd /var/www/html/startbootstrap-freelancer/wechat-php-sdk
+ 1160  ls
+ 1161  emac server.php 
+ 1162  emacs server.php 
+ 1163  emacs demo.php 
+ 1164  cd ..
+ 1165  ls
+ 1166  wget http://demo.open.weixin.qq.com/jssdk/sample.zip
+ 1167  ls
+ 1168  unzip sample.zip 
+ 1169  ls
+ 1170  cd sample/
+ 1171  ls
+ 1172  cd php/
+ 1173  ls
+ 1174  emacs sample.php 
+ 1175  ls
+ 1176  emacs jsapi_ticket.json 
+ 1177  emacs access_token.json 
+ 1178  ls
+ 1179  cd /var/www/
+ 1180  ls
+ 1181  cd html/
+ 1182  ls
+ 1183  cd startbootstrap-freelancer/
+ 1184  ls
+ 1185  cd wechat-php-sdk-simple/
+ 1186  ls
+ 1187  cd example/
+ 1188  ls
+ 1189  emacs server.php 
+ 1190  ls
+ 1191  cd ..
+ 1192  ls
+ 1193  emacs src/Wechat.php 
+ 1194  emacs example/server.php 
+ 1195  grep "token" . -r
+ 1196  emacs ./test/GeneralTest.php
+ 1197  emacs ./test/ReplyTest.php
+ 1198  ls
+ 1199  cd ..
+ 1200  ls
+ 1201  mkdir wechat
+ 1202  ls
+ 1203  cd wechat
+ 1204  ls
+ 1205  wget http://mp.weixin.qq.com/mpres/htmledition/res/wx_sample.20140819.zip
+ 1206  ls
+ 1207  unzip wx_sample.20140819.zip 
+ 1208  ls
+ 1209  rm wx_sample.20140819.zip 
+ 1210  ls
+ 1211  emacs wx_sample.php 
+ 1212  emacs ../wechat-php-sdk-simple/
+ 1213  emacs ../wechat-php-sdk-simple/src/Wechat.php 
+ 1214  emacs ../wechat-php-sdk-simple/example/server.php
+ 1215  emacs ../wechat-php-sdk-simple/src/Wechat.php 
+ 1216  emacs ../wechat-php-sdk-simple/example/server.php
+ 1217  cd ../wechat-php-sdk-simple/example/
+ 1218  /usr/bin/php server.php > script.out 2>&1 
+ 1219  emacs script.out 
+ 1220  emacs server.php 
+ 1221  /usr/bin/php server.php 
+ 1222  emacs server.php 
+ 1223  /usr/bin/php server.php 
+ 1224  emacs server.php 
+ 1225  /usr/bin/php server.php 
+ 1226  emacs server.php 
+ 1227  /usr/bin/php server.php 
+ 1228  emacs server.php 
+ 1229  /usr/bin/php server.php 
+ 1230  clear
+ 1231  chown -R www-data:www-data server.php 
+ 1232  ls
+ 1233  ls al
+ 1234  ls -al
+ 1235  sudo chmod +a "www-data allow delete,write,append,file_inherit,directory_inherit" /var/www/html/startbootstrap-freelancer/wechat-php-sdk-simple/example/*
+ 1236  sudo setfacl -R -m u:"www-data":rwX -m u:`whoami`:rwX /var/www/html/startbootstrap-freelancer/wechat-php-sdk-simple/example
+ 1237  ls
+ 1238  more testfile.txt 
+ 1239  emacs server.php 
+ 1240  /usr/bin/php server.php 
+ 1241  ls
+ 1242  more oowFGt7zrCPZWf7JQRxsJw4QJF4o 
+ 1243  emacs server.php 
+ 1244  /usr/bin/php server.php 
+ 1245  ls
+ 1246  rm oowFGt7zrCPZWf7JQRxsJw4QJF4o 
+ 1247  ls
+ 1248  emacs server.php 
+ 1249  /usr/bin/php server.php 
+ 1250  ls
+ 1251  rm oowFGt7zrCPZWf7JQRxsJw4QJF4o 
+ 1252  ls
+ 1253  emacs server.php 
+ 1254  rm oowFGt7zrCPZWf7JQRxsJw4QJF4o 
+ 1255  ls
+ 1256  cd /var/www/
+ 1257  ls
+ 1258  cd html/
+ 1259  ls
+ 1260  cd startbootstrap-freelancer/
+ 1261  ls
+ 1262  cd wechat-php-sdk-simple/
+ 1263  ls
+ 1264  cd example/
+ 1265  ls
+ 1266  more oowFGt7zrCPZWf7JQRxsJw4QJF4o 
+ 1267  ls
+ 1268  emacs server.php 
+ 1269  emacs oowFGt7zrCPZWf7JQRxsJw4QJF4o 
+ 1270  emacs server.php 
+ 1271  emacs oowFGt7zrCPZWf7JQRxsJw4QJF4o
+ 1272  emacs server.php 
+ 1273  emacs oowFGt7zrCPZWf7JQRxsJw4QJF4o
+ 1274  emacs server.php 
+ 1275  emacs oowFGt7zrCPZWf7JQRxsJw4QJF4o
+ 1276  emacs server.php 
+ 1277  ls
+ 1278  cd /var/www/html/startbootstrap-freelancer/wechat-php-sdk-simple/
+ 1279  ls
+ 1280  cd example/
+ 1281  emacs server.php 
+ 1282  history | grep php
+ 1283  /usr/bin/php server.php 
+ 1284  emacs server.php 
+ 1285  tasksel
+ 1286  apt-get install unzip php5-gd
+ 1287  cd /var/www
+ 1288  wget http://builds.piwik.org/latest.zip
+ 1289  unzip latest.zip
+ 1290  ls
+ 1291  rm *html *zip
+ 1292  ls
+ 1293  chown -R www-data:www-data /var/www/piwik
+ 1294  mv piwik/ html/startbootstrap-freelancer/
+ 1295  ls
+ 1296  service apache2 restart
+ 1297  sudo apt-get install build-essential
+ 1298  sudo apt-get install php-pear
+ 1299  sudo apt-get install php5-dev
+ 1300  sudo apt-get install php5-geoip php5-dev libgeoip-dev
+ 1301  sudo pecl install geoip
+ 1302  emacs /etc/php5/apache2/php.ini
+ 1303  cd html/startbootstrap-freelancer/piwik/
+ 1304  emacs /etc/php5/apache2/php.ini
+ 1305  cd misc/
+ 1306  ls
+ 1307  sudo wget http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz
+ 1308  sudo gunzip GeoLiteCity.dat.gz
+ 1309  sudo mv GeoLiteCity.dat GeoIPCity.dat
+ 1310  sudo service apache2 restart
+ 1311  cd ..
+ 1312  ls
+ 1313  cd wechat-php-sdk-simple/
+ 1314  ls
+ 1315  cd example/
+ 1316  ls
+ 1317  emacs server.php 
+ 1318  ls
+ 1319  history
+ 1320  /usr/bin/php server.php
+ 1321  emacs server.php 
+ 1322  ls
+ 1323  rm oHwf3sslkQTmi3fSq0sSloyOgj80 
+ 1324  ls
+ 1325  emacs server.php 
+ 1326  /usr/bin/php server.php
+ 1327  emacs server.php 
+ 1328  /usr/bin/php server.php
+ 1329  emacs server.php 
+ 1330  /usr/bin/php server.php
+ 1331  ls
+ 1332  emacs oHwf3sslkQTmi3fSq0sSloyOgj80 
+ 1333  /usr/bin/php server.php
+ 1334  cd /var/www/html/startbootstrap-freelancer/
+ 1335  ls
+ 1336  cd wechat-php-sdk-simple/
+ 1337  ls
+ 1338  cd example/
+ 1339  ls
+ 1340  emacs ls -al
+ 1341  ls -al
+ 1342  more testfile.txt
+ 1343  rm testfile.txt 
+ 1344  rm script.out 
+ 1345  rm oow*
+ 1346  ls
+ 1347  rm 0*
+ 1348  rm o*
+ 1349  ls
+ 1350  emase server.php 
+ 1351  emacs server.php 
+ 1352  fg
+ 1353  histiry
+ 1354  history
+ 1355  /usr/bin/php server.php 
+ 1356  fg
+ 1357  emacs server.php 
+ 1358  /usr/bin/php server.php 
+ 1359  emacs server.php 
+ 1360  /usr/bin/php server.php 
+ 1361  emacs server.php 
+ 1362  /usr/bin/php server.php 
+ 1363  ls
+ 1364  rm oHwf3sslkQTmi3fSq0sSloyOgj80 
+ 1365  emacs server.php 
+ 1366  apt-get update
+ 1367  apt-get upgrade
+ 1368  cd /var/www/
+ 1369  ls
+ 1370  cd html/
+ 1371  ls
+ 1372  cd startbootstrap-freelancer/
+ 1373  ls
+ 1374  cd wechat-php-sdk-simple/
+ 1375  ls
+ 1376  cd ..
+ 1377  ls
+ 1378  cd firebase/
+ 1379  la
+ 1380  rm index.html 
+ 1381  emacs index.html
+ 1382  emacs style.css
+ 1383  eamcs script.js
+ 1384  emacs script.js
+ 1385  ls
+ 1386  emacs index.html
+ 1387  ls
+ 1388  cd /var/www/html/startbootstrap-freelancer/
+ 1389  ls
+ 1390  mkdir firebase
+ 1391  cd firebase/
+ 1392  emacs index.html
+ 1393  rm index.html 
+ 1394  emacs index.html
+ 1395  rm index.html 
+ 1396  emacs index.html
+ 1397  cd /var/www/
+ 1398  ls
+ 1399  cd html/
+ 1400  ls
+ 1401  cd startbootstrap-freelancer/
+ 1402  ls
+ 1403  cd firebase/
+ 1404  ls
+ 1405  rm index.html 
+ 1406  ls
+ 1407  emacs in
+ 1408  emacs index.html
+ 1409  ls
+ 1410  cd /var/www/
+ 1411  ls
+ 1412  cd html/
+ 1413  ls
+ 1414  cd startbootstrap-freelancer/
+ 1415  cd wechat-php-sdk-simple/
+ 1416  ls
+ 1417  cd example/
+ 1418  ls
+ 1419  ls -al
+ 1420  emacs oHwf3sslkQTmi3fSq0sSloyOgj80
+ 1421  rm oHwf3sslkQTmi3fSq0sSloyOgj80
+ 1422  rm oHwf3sslkQTmi3fSq0sSloyOgj80.timezone 
+ 1423  ls
+ 1424  rm server.php 
+ 1425  emacs server.php
+ 1426  php
+ 1427  ls
+ 1428  emacs server.php
+ 1429  touch server.php
+ 1430  emacs server.php 
+ 1431  php server.php 
+ 1432  emacs server.php 
+ 1433  php server.php 
+ 1434  emacs 
+ 1435  emacs server.php 
+ 1436  ls
+ 1437  ls -al
+ 1438  emacs oHwf3sslkQTmi3fSq0sSloyOgj80.timezone
+ 1439  rm oHwf3sslkQTmi3fSq0sSloyOgj80.timezone 
+ 1440  rm oHwf3sslkQTmi3fSq0sSloyOgj80
+ 1441  ls
+ 1442  emacs server.php 
+ 1443  ls
+ 1444  cd /var/www/
+ 1445  ls
+ 1446  cd html/
+ 1447  ls
+ 1448  cd startbootstrap-freelancer/
+ 1449  ls
+ 1450  cd wechat-php-sdk-simple/
+ 1451  ls
+ 1452  cd example/
+ 1453  ls
+ 1454  emacs server.php 
+ 1455  emacs ../src/Wechat.php 
+ 1456  ls
+ 1457  cd /var/www/html/
+ 1458  ls
+ 1459  cd startbootstrap-freelancer/
+ 1460  ls
+ 1461  cd wechat-php-sdk-simple/
+ 1462  ls
+ 1463  cd example/
+ 1464  ls
+ 1465  rm oHwf3sslkQTmi3fSq0sSloyOgj80~
+ 1466  ls
+ 1467  cp * *.timezone
+ 1468  cp oHwf3snTn-tqSmPJ0UBOiFH2qGWM oHwf3snTn-tqSmPJ0UBOiFH2qGWM.timezone
+ 1469  cp oHwf3sskeqUnfWu2-_oZ_46XawzM oHwf3sskeqUnfWu2-_oZ_46XawzM.timezone
+ 1470  cp oHwf3ssIZk6itcV_dKGA0XN6o000 oHwf3ssIZk6itcV_dKGA0XN6o000.timezone
+ 1471  cp oHwf3sslkQTmi3fSq0sSloyOgj80 oHwf3sslkQTmi3fSq0sSloyOgj80.timezone
+ 1472  ls
+ 1473  ls -al
+ 1474  cd /var/www/html/startbootstrap-freelancer/
+ 1475  ls
+ 1476  cd wechat-php-sdk-simple/
+ 1477  ls
+ 1478  cd example/
+ 1479  ls
+ 1480  emacs server.php 
+ 1481  rm oHwf3sslkQTmi3fSq0sSloyOgj80.timezone 
+ 1482  more oHwf3sslkQTmi3fSq0sSloyOgj80.timezone 
+ 1483  emacs server.php 
+ 1484  ls
+ 1485  more oHwf3ssIZk6itcV_dKGA0XN6o000
+ 1486  emacs server.php 
+ 1487  gd
+ 1488  history
+ 1489  emacs server.php fg
+ 1490  fg
+ 1491  cd /var/www/
+ 1492  ls
+ 1493  cd html/
+ 1494  ls
+ 1495  cd startbootstrap-freelancer/
+ 1496  ls
+ 1497  git status
+ 1498  ls
+ 1499  emacs index.html 
+ 1500  ls
+ 1501  cd img/
+ 1502  ls
+ 1503  cd ..
+ 1504  emacs index.html 
+ 1505  cd img/
+ 1506  ls
+ 1507  convert
+ 1508  ls
+ 1509  cp logo.png  logo.png.backup
+ 1510  convert logo.png.backup -resize 200 logo.png
+ 1511  cd    cd cdrjwaoughjrwaoghirghkjarghiuarwhfjakwlfhljrkfugahwrjfuewhfaewofewijds
+ 1512  ls
+ 1513  cd ..
+ 1514  ls
+ 1515  emacs index.html 
+ 1516  ls
+ 1517  cd css/
+ 1518  ls
+ 1519  emacs freelancer.css 
+ 1520  cd ..
+ 1521  emacs index.html 
+ 1522  cd css/
+ 1523  ls
+ 1524  emacs freelancer.css 
+ 1525  cd ..
+ 1526  emacs index.html 
+ 1527  cd css/
+ 1528  ls
+ 1529  grep "col-lg-12" -r .
+ 1530  grep "col-lg-12" freelancer.css 
+ 1531  ls
+ 1532  grep "col-lg-12" bootstrap.min.css 
+ 1533  cd ..
+ 1534  ls
+ 1535  emacs index.html 
+ 1536  ls
+ 1537  cd /var/www/
+ 1538  ls
+ 1539  cd html/
+ 1540  ls
+ 1541  cd startbootstrap-freelancer/
+ 1542  ls
+ 1543  emacs index.html 
+ 1544  ls
+ 1545  cd js/
+ 1546  ls
+ 1547  cd ..
+ 1548  cd mail/
+ 1549  ls
+ 1550  emacs contact_me.php 
+ 1551  cd ..
+ 1552  ls
+ 1553  grep "contact.php" -r .
+ 1554  ls
+ 1555  cd js/
+ 1556  ls
+ 1557  emacs freelancer.js 
+ 1558  ls
+ 1559  emacs contact_me.js 
+ 1560  ls
+ 1561  cd ..
+ 1562  grep "contact_me.js" -r .
+ 1563  emacs index.html 
+ 1564  ls
+ 1565  cd js
+ 1566  cd ..
+ 1567  cd css/
+ 1568  ls
+ 1569  emacs freelancer.css 
+ 1570  cd ..
+ 1571  ls
+ 1572  eamcs index.html 
+ 1573  emacs index.html 
+ 1574  ls
+ 1575  cd mail/
+ 1576  ls
+ 1577  cd ..
+ 1578  ls
+ 1579  emacs index.html 
+ 1580  ls
+ 1581  cd js/
+ 1582  ls
+ 1583  emacs contact_me.js 
+ 1584  cd ..
+ 1585  emacs index.html 
+ 1586  git status
+ 1587  ls
+ 1588  cd mail/
+ 1589  ls
+ 1590  emac contact_me.php 
+ 1591  emacs contact_me.php 
+ 1592  ls
+ 1593  cd ..
+ 1594  ls
+ 1595  emacs index.html 
+ 1596  ls
+ 1597  cd js/
+ 1598  ls
+ 1599  emacs contact_me.js 
+ 1600  ls
+ 1601  emacs /etc/hosts
+ 1602  emacs /etc/hostname 
+ 1603  emacs /etc/hosts
+ 1604  ls
+ 1605  cd ..
+ 1606  ls
+ 1607  git status
+ 1608  git add css/freelancer.css
+ 1609  git add img/logo.png
+ 1610  git add index.html
+ 1611  git add js/contact_me.js
+ 1612  ls
+ 1613  git status
+ 1614  git commit -m "email send faster"
+ 1615  ls
+ 1616  emacs index.html 
+ 1617  ls
+ 1618  cd js/
+ 1619  ls
+ 1620  cd ..
+ 1621  grep "cbpAnimatedHeader.js" -r .
+ 1622  emacs index.html 
+ 1623  git status
+ 1624  git add index.html
+ 1625  git commit -m "remove auto resize"
+ 1626  emacs index.html 
+ 1627  clear
+ 1628  ls
+ 1629  cd /var/www/
+ 1630  ls
+ 1631  cd html/
+ 1632  ls
+ 1633  cd startbootstrap-freelancer/
+ 1634  ls
+ 1635  emacs index.html 
+ 1636  cd css/
+ 1637  ls
+ 1638  emacs freelancer.css 
+ 1639  cd ..
+ 1640  emacs index.html 
+ 1641  emacs css/freelancer.css 
+ 1642  emacs index.html 
+ 1643  ls
+ 1644  cd css/
+ 1645  ls
+ 1646  emacs freelancer.css 
+ 1647  cd ..
+ 1648  emacs index.html 
+ 1649  ls
+ 1650  emacs css/freelancer.css 
+ 1651  emacs index.html 
+ 1652  emacs css/freelancer.css 
+ 1653  emacs index.html 
+ 1654  ls
+ 1655  cd css/
+ 1656  ls
+ 1657  eamcs freelancer.css 
+ 1658  emacs freelancer.css 
+ 1659  git status
+ 1660  emacs ../index.html 
+ 1661  git checkout freelancer.css
+ 1662  git checkout ../index.html
+ 1663  ls
+ 1664  git status
+ 1665  cd /var/
+ 1666  cd /var/www/
+ 1667  ls
+ 1668  cd html/
+ 1669  ls
+ 1670  cd startbootstrap-freelancer/
+ 1671  ls
+ 1672  git clone https://github.com/firebase/firefeed.git
+ 1673  ls
+ 1674  cd firefeed/
+ 1675  ls
+ 1676  cd www/
+ 1677  ls
+ 1678  emacs index.html 
+ 1679  ls
+ 1680  cd /var/www/
+ 1681  ls
+ 1682  cd html/
+ 1683  ls
+ 1684  cd startbootstrap-freelancer/
+ 1685  ls
+ 1686  cd firefeed/
+ 1687  ls
+ 1688  cd www/
+ 1689  ls
+ 1690  emacs index.html 
+ 1691  ls
+ 1692  git diff index.html
+ 1693  emacs index.html 
+ 1694  ls
+ 1695  cd js/
+ 1696  ls
+ 1697  emacs firefeed.js 
+ 1698  emacs firefeed-ui.js 
+ 1699  cd ..
+ 1700  ls
+ 1701  grep "firefeed.firebaseio.com" -r .
+ 1702  emacs ./www/js/firefeed-ui.js
+ 1703  emacs ./www/about.html 
+ 1704  emacs ./www/index.html 
+ 1705  ls
+ 1706  emacs rules.json 
+ 1707  cd /var/www/html/startbootstrap-freelancer/
+ 1708  ls
+ 1709  cd firefeed/
+ 1710  ls
+ 1711  git status
+ 1712  git commit -m "magnet"
+ 1713  git add .
+ 1714  git commit -m "magnet"
+ 1715  git remote add origin https://github.com/yuntianlong2002/magnet.git
+ 1716  git remote -v
+ 1717  git remote rm origin
+ 1718  git remote add origin https://github.com/yuntianlong2002/magnet.git
+ 1719  git push -u origin master
+ 1720  ls
+ 1721  cd /var/
+ 1722  ls
+ 1723  cd www/
+ 1724  ls
+ 1725  cd html/
+ 1726  ls
+ 1727  cd startbootstrap-freelancer/
+ 1728  ls
+ 1729  cd /var/www/
+ 1730  ls
+ 1731  cd html/
+ 1732  ls
+ 1733  cd startbootstrap-freelancer/
+ 1734  ls
+ 1735  cd wechat-php-sdk-simple/
+ 1736  ls
+ 1737  cd example/
+ 1738  ls
+ 1739  emacs server.php 
+ 1740  ls
+ 1741  rm *.timezone
+ 1742  ls
+ 1743  ls -al
+ 1744  curl -sS https://getcomposer.org/installer | php
+ 1745  ls
+ 1746  composer require ktamas77/firebase-php dev-master
+ 1747  mv composer.phar /usr/local/bin/composer
+ 1748  composer require ktamas77/firebase-php dev-master
+ 1749  ld
+ 1750  ls
+ 1751  more oHwf3snfzbTsgAJPFyAWznJFhqmQ
+ 1752  more oHwf3sjTlHeX6o7E8kJ0oWmxTeoM
+ 1753  more oHwf3sslkQTmi3fSq0sSloyOgj80
+ 1754  more oHwf3siEVw0Vj_deWh8wkUIOYqhU
+ 1755  more oHwf3sskeqUnfWu2-_oZ_46XawzM
+ 1756  more oHwf3sg5zUB8-w-Dr6AsryWZEEXE
+ 1757  more oHwf3ssIZk6itcV_dKGA0XN6o000
+ 1758  more oHwf3snTn-tqSmPJ0UBOiFH2qGWM
+ 1759  ls -al
+ 1760  mkdir UserDataBackup
+ 1761  mc oHw* UserDataBackup/
+ 1762  mv oHw* UserDataBackup/
+ 1763  ls
+ 1764  cd /var/www/
+ 1765  ls
+ 1766  cd html/
+ 1767  ls
+ 1768  cd startbootstrap-freelancer/
+ 1769  ls
+ 1770  cd wechat-php-sdk-simple/
+ 1771  ls
+ 1772  cd example/
+ 1773  ls
+ 1774  cd UserDataBackup/
+ 1775  cp -r * ../
+ 1776  ls
+ 1777  cd ..
+ 1778  ls
+ 1779  history
+ 1780  cd /var/www/
+ 1781  ls
+ 1782  cd html/
+ 1783  ls
+ 1784  cd startbootstrap-freelancer/
+ 1785  ls
+ 1786  npm update -g firebase-tools
+ 1787  history
+ 1788  history | www
+ 1789  history |grep  www
+ 1790  cd /var/www/html/
+ 1791  ls
+ 1792  cd humhub/
+ 1793  ls
+ 1794  whereis httpd
+ 1795  ps ax | grep httpd
+ 1796  history | grep httpd
+ 1797  service httpd start
+ 1798  history
+ 1799  emacs /etc/apache2/sites-available/000-default.conf
+ 1800  apt-get install httpd
+ 1801  sudo service apache2 restart
+ 1802  cd ~
+ 1803  ls
+ 1804  history > history_shopty.log
