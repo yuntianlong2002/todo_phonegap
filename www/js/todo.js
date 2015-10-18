@@ -2,13 +2,24 @@ angular.module('todoApp', ["firebase"])
   .controller('TodoListController', function TodoListController($scope, $rootScope, $firebaseArray) {
 
     var url = 'https://recurring2do.firebaseio.com';
+    var fireRef = new Firebase(url);
+
     if (typeof $rootScope.userid != 'undefined') {
       url = 'https://recurring2do.firebaseio.com/' + $rootScope.userid;
+    } else {
+      new Fingerprint2().get(function(result){
+        console.log(result);
+        $rootScope.tempuser = result;
+        url = 'https://recurring2do.firebaseio.com/' + $rootScope.tempuser;
+        fireRef = new Firebase(url);
+        $scope.todos = $firebaseArray(fireRef);
+        $scope.newTodo = '';
+      });
     }
     console.log(url);
     var widths = ["5%", "25%", "50%", "75%", "100%"];
     var colors = ["#f63a0f", "#f27011", "#f2b01e", "#f2d31b", "#86e01e"];
-    var fireRef = new Firebase(url);
+    fireRef = new Firebase(url);
     // Bind the todos to the firebase provider.
     $scope.todos = $firebaseArray(fireRef);
     $scope.newTodo = '';
@@ -24,10 +35,11 @@ angular.module('todoApp', ["firebase"])
         finishtime: 'Mon Jan 01 1900',
         width: '5%',
         color: '#f63a0f',
-        color_index: 0
+        color_index: 0,
+        visibility: 'show'
       });
       $scope.newTodo = '';
-      console.log($rootScope.display_name); //Debug
+      console.log($rootScope.display_name, "new todo added"); //Debug
     };
 
     $scope.login = function() {
@@ -42,19 +54,65 @@ angular.module('todoApp', ["firebase"])
             $rootScope.userid = authData.facebook.id;
             url = 'https://recurring2do.firebaseio.com/' + $rootScope.userid;
             console.log(url);
+            $rootScope.userid = "";
             fireRef = new Firebase(url);
             // Bind the todos to the firebase provider.
             $scope.todos = $firebaseArray(fireRef);
+            $scope.newTodo = '';
           }
         }, {
           scope: "email" // the permissions requested
         });
       } else {
         $rootScope.display_name = "";
-        url = 'https://recurring2do.firebaseio.com';
+        //Replace with local user id
+        new Fingerprint2().get(function(result){
+          console.log(result);
+          $rootScope.tempuser = result;
+        });
+        url = 'https://recurring2do.firebaseio.com/' + $rootScope.tempuser;
+        //Replace with local user id
         fireRef.unauth();
         fireRef = new Firebase(url);
         $scope.todos = $firebaseArray(fireRef);
+        $scope.newTodo = '';
+      }
+    }
+
+    $scope.loginGoogle = function() {
+      if(!$rootScope.display_name) {
+        fireRef.authWithOAuthPopup("google", function(error, authData) {
+          if (error) {
+            console.log("Login Failed!", error);
+          } else {
+            console.log(authData.google.id);
+            console.log(authData.google.displayName);
+            $rootScope.display_name = authData.google.displayName;
+            $rootScope.userid = authData.google.id;
+            url = 'https://recurring2do.firebaseio.com/' + $rootScope.userid;
+            console.log(url);
+            $rootScope.userid = "";
+            fireRef = new Firebase(url);
+            // Bind the todos to the firebase provider.
+            $scope.todos = $firebaseArray(fireRef);
+            $scope.newTodo = '';
+          }
+        }, {
+          scope: "email" // the permissions requested
+        });
+      } else {
+        $rootScope.display_name = "";
+        //Replace with local user id
+        new Fingerprint2().get(function(result){
+          console.log(result);
+          $rootScope.tempuser = result;
+        });
+        url = 'https://recurring2do.firebaseio.com/' + $rootScope.tempuser;
+        //Replace with local user id
+        fireRef.unauth();
+        fireRef = new Firebase(url);
+        $scope.todos = $firebaseArray(fireRef);
+        $scope.newTodo = '';
       }
     }
 
@@ -80,8 +138,10 @@ angular.module('todoApp', ["firebase"])
       var d = new Date();
       if (!todo.completed) {
         todo.completed = true;
+        todo.visibility= 'hidden';
       } else {
         todo.completed = false;
+        todo.visibility= 'show';
       }
       todo.finishtime = d.toDateString();
       $scope.todos.$save(todo);

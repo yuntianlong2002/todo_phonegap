@@ -38,13 +38,14 @@
                 <span class="right">{{iflogin()}}</span>
                 <li><a ng-click="archive()" class="icon-delete">Delete</a></li>
                 <li><a ng-click="login()"><img src="img/facebook.png" width="12px" height="12px" style="display: inline-block;vertical-align: 3px;"/></a></li>
+                <li><a ng-click="loginGoogle()"><img src="img/google1.png" width="12px" height="12px" style="display: inline-block;vertical-align: 3px;"/></a></li>
           </ul>
 
           <ul class="todo-list">
             <li ng-repeat="todo in todos" class="done-{{todo.completed}}">
               <a class="toggle" ng-click="finish(todo)"></a>
               <span class="finished-{{todo.completed}}" ng-click="advance(todo)">{{todo.title}}</span>
-              <div class="progress-bar" ng-style="{'width': todo.width, 'background-color': todo.color}"></div>
+              <div class="progress-bar" ng-style="{'visibility':todo.visibility, 'width': todo.width, 'background-color': todo.color}"></div>
 
             </li>
             <form ng-submit="addTodo()">
@@ -68,6 +69,7 @@
         <script type="text/javascript" src="js/todo.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/fingerprintjs2/0.8.0/fingerprint2.min.js"></script>
         <script type="text/javascript">
             app.initialize();
         </script>
