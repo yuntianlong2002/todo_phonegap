@@ -6,6 +6,8 @@ angular.module('todoApp', ["firebase"])
       url = 'https://recurring2do.firebaseio.com/' + $rootScope.userid;
     }
     console.log(url);
+    var widths = ["5%", "25%", "50%", "75%", "100%"];
+    var colors = ["#f63a0f", "#f27011", "#f2b01e", "#f2d31b", "#86e01e"];
     var fireRef = new Firebase(url);
     // Bind the todos to the firebase provider.
     $scope.todos = $firebaseArray(fireRef);
@@ -19,7 +21,10 @@ angular.module('todoApp', ["firebase"])
       $scope.todos.$add({
         title: newTodo,
         completed: false,
-        finishtime: 'Mon Jan 01 1900'
+        finishtime: 'Mon Jan 01 1900',
+        width: '5%',
+        color: '#f63a0f',
+        color_index: 0
       });
       $scope.newTodo = '';
       console.log($rootScope.display_name); //Debug
@@ -73,6 +78,13 @@ angular.module('todoApp', ["firebase"])
         todo.completed = false;
       }
       todo.finishtime = d.toDateString();
+      $scope.todos.$save(todo);
+    };
+
+    $scope.advance = function(todo) {
+      todo.color_index = (todo.color_index + 1) % 5;
+      todo.color = colors[todo.color_index];
+      todo.width = widths[todo.color_index];
       $scope.todos.$save(todo);
     };
 

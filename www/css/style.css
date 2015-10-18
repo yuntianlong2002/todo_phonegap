@@ -117,7 +117,7 @@ outline:none;
 body {
   font: 13px/20px 'Lucida Grande', Tahoma, Verdana, sans-serif;
   color: #404040;
-  background: #f8f6f6;
+  background: #f8f6f6 url("../img/bg.png") 0 0 repeat;
 }
 
 .container {
